@@ -1,0 +1,12 @@
+[submodule "Alamofire"]
+	path = Third party/Alamofire
+	url = https://github.com/Alamofire/Alamofire.git
+[submodule "Result"]
+	path = Third party/Result
+	url = https://github.com/antitypical/Result.git
+[submodule "Moya"]
+	path = Third party/Moya
+	url = https://github.com/Moya/Moya.git
+[submodule "PimineSDK"]
+	path = PimineSDK
+	url = https://github.com/Pimine/PimineSDK

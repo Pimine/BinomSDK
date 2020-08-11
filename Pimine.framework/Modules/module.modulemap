@@ -1,0 +1,11 @@
+framework module Pimine {
+  umbrella header "Pimine.h"
+
+  export *
+  module * { export * }
+}
+
+module Pimine.Swift {
+    header "Pimine-Swift.h"
+    requires objc
+}
