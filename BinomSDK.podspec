@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name            = 'BinomSDK'
-  s.version         = '0.1.0'
+  s.version         = '1.0.0'
   s.summary         = 'SDK for Binom'
 
   s.description     = 'Custom SDK for Binom CPA Tracker'
