@@ -10,8 +10,8 @@ import Pimine
 
 public extension Binom {
 struct InstallResponse {
-    let uuid: Int
-    let isCouponValid: Bool
+    public let uuid: Int
+    public let isCouponValid: Bool
 }}
 
 // MARK: - Decodable

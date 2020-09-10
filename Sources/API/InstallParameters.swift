@@ -13,10 +13,10 @@ struct InstallParameters {
     
     // MARK: - Properties
     
-    let coupon: String
-    let app: Int
-    let screen: String
-    let clickID: String?
+    public let coupon: String
+    public let app: Int
+    public let screen: String
+    public let clickID: String?
     
     // MARK: - Initialization
     
