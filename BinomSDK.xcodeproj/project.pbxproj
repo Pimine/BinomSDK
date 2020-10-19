@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB3EAE1B253DC99A00888CC0 /* Pimine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EB3EAE06253DC99A00888CC0 /* Pimine.framework */; };
 		EB8E593124E1CC850015EA39 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8E593024E1CC850015EA39 /* Keys.swift */; };
 		EBABBBB024E1A93B00E3AF15 /* BinomSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = EBABBBAE24E1A93B00E3AF15 /* BinomSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EBABBBBC24E1B0DF00E3AF15 /* BinomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBABBBBB24E1B0DF00E3AF15 /* BinomManager.swift */; };
@@ -23,7 +24,6 @@
 		EBF1E96F24E321C9009808EE /* Moya.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBF1E94924E321B2009808EE /* Moya.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		EBF1E97024E321C9009808EE /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF1E96324E321BA009808EE /* Result.framework */; };
 		EBF1E97124E321C9009808EE /* Result.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = EBF1E96324E321BA009808EE /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		EBF1E97724E322A8009808EE /* Pimine.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBF1E97624E322A8009808EE /* Pimine.framework */; };
 		EBF8804124E2D9C900FAFAE5 /* BinomProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8804024E2D9C900FAFAE5 /* BinomProvider.swift */; };
 /* End PBXBuildFile section */
 
@@ -187,6 +187,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		EB3EAE06253DC99A00888CC0 /* Pimine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Pimine.framework; path = "Third party/Pimine.framework"; sourceTree = "<group>"; };
 		EB8E593024E1CC850015EA39 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		EBABBBAB24E1A93B00E3AF15 /* BinomSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BinomSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBABBBAE24E1A93B00E3AF15 /* BinomSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinomSDK.h; sourceTree = "<group>"; };
@@ -202,7 +203,6 @@
 		EBF1E92724E321A5009808EE /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = "Third party/Alamofire/Alamofire.xcodeproj"; sourceTree = "<group>"; };
 		EBF1E93F24E321B2009808EE /* Moya.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Moya.xcodeproj; path = "Third party/Moya/Moya.xcodeproj"; sourceTree = "<group>"; };
 		EBF1E95424E321BA009808EE /* Result.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Result.xcodeproj; path = "Third party/Result/Result.xcodeproj"; sourceTree = "<group>"; };
-		EBF1E97624E322A8009808EE /* Pimine.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Pimine.framework; sourceTree = "<group>"; };
 		EBF8804024E2D9C900FAFAE5 /* BinomProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinomProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -213,8 +213,8 @@
 			files = (
 				EBF1E96E24E321C9009808EE /* Moya.framework in Frameworks */,
 				EBF1E96C24E321C9009808EE /* Alamofire.framework in Frameworks */,
-				EBF1E97724E322A8009808EE /* Pimine.framework in Frameworks */,
 				EBF1E97024E321C9009808EE /* Result.framework in Frameworks */,
+				EB3EAE1B253DC99A00888CC0 /* Pimine.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +233,7 @@
 		EBABBBA124E1A93B00E3AF15 = {
 			isa = PBXGroup;
 			children = (
-				EBF1E97624E322A8009808EE /* Pimine.framework */,
+				EB3EAE06253DC99A00888CC0 /* Pimine.framework */,
 				EBF1E92724E321A5009808EE /* Alamofire.xcodeproj */,
 				EBF1E95424E321BA009808EE /* Result.xcodeproj */,
 				EBF1E93F24E321B2009808EE /* Moya.xcodeproj */,
@@ -721,6 +721,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Third\\ party",
 				);
 				INFOPLIST_FILE = "Sources/Support files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -755,6 +756,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/Third\\ party",
 				);
 				INFOPLIST_FILE = "Sources/Support files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
