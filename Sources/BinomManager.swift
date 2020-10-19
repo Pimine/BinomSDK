@@ -84,7 +84,6 @@ public final class BinomManager {
         if let coupon = coupon, let clickID = clickID, screens.count > 0  {
             params = Binom.InstallParameters(
                 coupon: coupon,
-                app: app,
                 screen: screens.joined(separator: "|"),
                 clickID: clickID
             )
@@ -120,7 +119,8 @@ public final class BinomManager {
             uuid: uuid,
             receipt: receipt,
             subscription: subscription,
-            screenID: screenID
+            screenID: screenID,
+            app: app
         )
         
         provider.updateSubscription(params) { (requestResult) in

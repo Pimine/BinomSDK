@@ -14,15 +14,13 @@ struct InstallParameters {
     // MARK: - Properties
     
     public let coupon: String
-    public let app: Int
     public let screen: String
     public let clickID: String?
     
     // MARK: - Initialization
     
-    public init(coupon: String, app: Int, screen: String, clickID: String?) {
+    public init(coupon: String, screen: String, clickID: String?) {
         self.coupon = coupon
-        self.app = app
         self.screen = screen
         self.clickID = clickID
     }
@@ -35,7 +33,6 @@ extension Binom.InstallParameters {
     var json: Parameters {
         var params = Parameters()
         params["coupon"] = coupon
-        params["app"] = app
         params["screen"] = screen
         params["clickid"] = clickID
         return params
