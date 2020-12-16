@@ -1,0 +1,48 @@
+PODS:
+  - Alamofire (5.4.0)
+  - Moya (14.0.0):
+    - Moya/Core (= 14.0.0)
+  - Moya/Core (14.0.0):
+    - Alamofire (~> 5.0)
+  - Pimine (0.4.1):
+    - Pimine/Core (= 0.4.1)
+  - Pimine/Core (0.4.1):
+    - Pimine/HandyExtensions
+    - Pimine/Utilities
+    - ScuffedUI
+  - Pimine/HandyExtensions (0.4.1):
+    - SwifterSwift/CoreAnimation
+    - SwifterSwift/CoreGraphics
+    - SwifterSwift/Foundation
+    - SwifterSwift/SwiftStdlib
+    - SwifterSwift/UIKit
+  - Pimine/Utilities (0.4.1)
+  - ScuffedUI (0.11.0)
+  - SwifterSwift/CoreAnimation (5.2.0)
+  - SwifterSwift/CoreGraphics (5.2.0)
+  - SwifterSwift/Foundation (5.2.0)
+  - SwifterSwift/SwiftStdlib (5.2.0)
+  - SwifterSwift/UIKit (5.2.0)
+
+DEPENDENCIES:
+  - Moya
+  - Pimine
+
+SPEC REPOS:
+  trunk:
+    - Alamofire
+    - Moya
+    - Pimine
+    - ScuffedUI
+    - SwifterSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
+  Pimine: 55f26a0370f07e9a7166da05c984b27f9663b302
+  ScuffedUI: 28d5cdb2797385c84248455ec5dcdb7f2ce37adb
+  SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
+
+PODFILE CHECKSUM: 8347ce5f597979388c32c277ec9a4b192ad9b76a
+
+COCOAPODS: 1.10.0
