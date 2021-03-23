@@ -7,7 +7,7 @@
 //  Created by Den Andreychuk <denis.andrei4uk@yandex.ua> on 11.08.2020
 
 import Moya
-import Pimine
+import PimineUtilities
 
 final class BinomProvider {
     

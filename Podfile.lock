@@ -1,22 +1,31 @@
 PODS:
-  - Alamofire (5.4.0)
+  - Alamofire (5.4.1)
   - Moya (14.0.0):
     - Moya/Core (= 14.0.0)
   - Moya/Core (14.0.0):
     - Alamofire (~> 5.0)
-  - Pimine (0.4.1):
-    - Pimine/Core (= 0.4.1)
-  - Pimine/Core (0.4.1):
+  - Pimine (0.6.0):
+    - Pimine/Core (= 0.6.0)
+  - Pimine/Core (0.6.0):
     - Pimine/HandyExtensions
     - Pimine/Utilities
     - ScuffedUI
-  - Pimine/HandyExtensions (0.4.1):
+  - Pimine/HandyExtensions (0.6.0):
+    - PimineHandyExtensions
+  - Pimine/Utilities (0.6.0):
+    - PimineUtilities
+  - PimineHandyExtensions (0.6.0):
+    - PimineHandyExtensions/Core (= 0.6.0)
+  - PimineHandyExtensions/Core (0.6.0):
+    - PimineUtilities
     - SwifterSwift/CoreAnimation
     - SwifterSwift/CoreGraphics
     - SwifterSwift/Foundation
     - SwifterSwift/SwiftStdlib
     - SwifterSwift/UIKit
-  - Pimine/Utilities (0.4.1)
+  - PimineUtilities (0.6.0):
+    - PimineUtilities/Core (= 0.6.0)
+  - PimineUtilities/Core (0.6.0)
   - ScuffedUI (0.11.0)
   - SwifterSwift/CoreAnimation (5.2.0)
   - SwifterSwift/CoreGraphics (5.2.0)
@@ -26,23 +35,35 @@ PODS:
 
 DEPENDENCIES:
   - Moya
-  - Pimine
+  - Pimine (from `https://github.com/Pimine/PimineSDK`)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Moya
-    - Pimine
+    - PimineHandyExtensions
+    - PimineUtilities
     - ScuffedUI
     - SwifterSwift
 
+EXTERNAL SOURCES:
+  Pimine:
+    :git: https://github.com/Pimine/PimineSDK
+
+CHECKOUT OPTIONS:
+  Pimine:
+    :commit: 1f2abc0c31267212daf5e4db962d2ce5f5258791
+    :git: https://github.com/Pimine/PimineSDK
+
 SPEC CHECKSUMS:
-  Alamofire: 3b6a534a3df22db367e4dedeeca73d1ddfcf0e2f
+  Alamofire: 2291f7d21ca607c491dd17642e5d40fdcda0e65c
   Moya: 5b45dacb75adb009f97fde91c204c1e565d31916
-  Pimine: 55f26a0370f07e9a7166da05c984b27f9663b302
+  Pimine: f9c65e5ad541ad645ad52e54514c94c518c4a58b
+  PimineHandyExtensions: 122af8d2835ceca1a67a3bb076e39e9c1dfd46ba
+  PimineUtilities: aaf0c96371293105e9d07ee10891393df3b3a928
   ScuffedUI: 28d5cdb2797385c84248455ec5dcdb7f2ce37adb
   SwifterSwift: 334181863c416882d97b7a60c05054d9e4d799e2
 
-PODFILE CHECKSUM: 8347ce5f597979388c32c277ec9a4b192ad9b76a
+PODFILE CHECKSUM: 928cbc69ea2b27fbaaf41c11b472bbd5cf2d7022
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

@@ -6,7 +6,7 @@
 //
 //  Created by Den Andreychuk <denis.andrei4uk@yandex.ua> on 11.08.2020
 
-import Pimine
+import PimineUtilities
 
 public extension Binom {
 struct InstallResponse {

@@ -4,7 +4,7 @@
 target 'BinomSDK' do
   use_frameworks!
 
-  pod 'Pimine'
+  pod 'Pimine', :git => 'https://github.com/Pimine/PimineSDK'
   pod 'Moya'
 
 end

@@ -8,7 +8,7 @@
 
 import Moya
 import UIKit
-import Pimine
+import PimineUtilities
 
 public final class BinomManager {
     
