@@ -24,6 +24,7 @@ Pod::Spec.new do |s|
     ss.source_files = 'Sources/**/*.swift'
     ss.dependency 'Moya'
     ss.dependency 'Pimine'
+    ss.dependency 'PromiseKit'
   end
 
 end
