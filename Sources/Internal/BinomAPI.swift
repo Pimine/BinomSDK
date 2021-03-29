@@ -9,6 +9,9 @@
 import Moya
 
 enum BinomAPI {
+    /// Tries to auth client with provided key.
+    case auth(Binom.AuthParameters)
+    
     /// Tracks install and response with UUID and coupon status.
     case trackInstall(Binom.InstallParameters?)
     
@@ -21,11 +24,13 @@ enum BinomAPI {
 extension BinomAPI: TargetType {
     
     public var baseURL: URL {
-        return BinomManager.host
+        return BinomManager.shared.configuration.host
     }
     
     public var path: String {
         switch self {
+        case .auth:
+            return "/auth/"
         case .trackInstall:
             return "/track_install/"
         case .updateSubscription:
@@ -39,15 +44,17 @@ extension BinomAPI: TargetType {
     
     public var task: Task {
         switch self {
+        case .auth(let params):
+            return .requestJSONEncodable(params)
         case .trackInstall(let params):
             return .requestParameters(
                 parameters: params?.json ?? [:],
-                encoding: JSONEncoding()
+                encoding: JSONEncoding.default
             )
         case .updateSubscription(let params):
             return .requestParameters(
                 parameters: params.json,
-                encoding: JSONEncoding()
+                encoding: JSONEncoding.default
             )
         }
     }

@@ -11,14 +11,17 @@ import Foundation
 public extension Binom {
 struct SubscriptionUpdateParameters {
     
-    // MARK: - Properties
+    // MARK: Properties
     
-    let uuid: Int
+    let uuid: String
     let receipt: String
     let subscription: String
     let screenID: String
     let app: Int
+    let token: String
 }}
+
+// MARK: - JSON
 
 extension Binom.SubscriptionUpdateParameters {
     
@@ -29,6 +32,7 @@ extension Binom.SubscriptionUpdateParameters {
         params["last_period"] = subscription
         params["screen"] = screenID
         params["app"] = app
+        params["token"] = token
         return params
     }
 }

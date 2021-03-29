@@ -8,103 +8,63 @@
 
 import Moya
 import UIKit
+import PromiseKit
 import PimineUtilities
 
 public final class BinomManager {
     
-    public enum Configuration {
-        case host(URL)
-        case app(Int)
-    }
-    
-    // MARK: - Properties
-    
-    private(set) public static var host: URL!
-    
-    private(set) public static var app: Int!
-    
-    private static let provider = BinomProvider()
-    
-    private static var screens: [String] = []
-    
-    @UserDefaultsBacked(key: Keys.uuid)
-    public static var uuid: Int?
-    
-    @UserDefaultsBacked(key: Keys.clickID)
-    public static var clickID: String?
-    
-    @UserDefaultsBacked(key: Keys.coupon)
-    public static var coupon: String?
-    
-    @UserDefaultsBacked(key: Keys.isCouponValid)
-    public static var isCouponValid: Bool?
-    
-    // MARK: - Setup
-    
-    public static func configure(_ configuration: [Configuration]) {
-        for config in configuration {
-            switch config {
-            case .host(let host):
-                self.host = host
-            case .app(let app):
-                self.app = app
-            }
-        }
-        trackInstall()
-    }
-    
-    // MARK: - Methods
-    
-    public static func parsePasteboardContent() -> [String]? {
-        guard
-            let encodedData = UIPasteboard.general.string,
-            let decodedData = Data(base64Encoded: encodedData),
-            let content = String(data: decodedData, encoding: .utf8)
-        else { return nil }
+    public struct Configuration: Codable {
         
-        let params = content.components(separatedBy: "//")
-        guard params.count == 4 else { return nil }
+        public let staticToken: String
+        public let uuid: String
+        public let app: Int
+        public let host: URL
         
-        let clickID = params[1]
-        let screenKeys = params[2]
-        let coupon = params[3]
-        
-        self.clickID = clickID
-        self.coupon = coupon
-        self.screens = screenKeys.components(separatedBy: "|")
-        
-        return self.screens
-    }
-    
-    public static func trackInstall(
-        silently: Bool = true,
-        result: @escaping (Result<Binom.InstallResponse, Error>) -> Void = { _ in }
-    ) {
-        var params: Binom.InstallParameters?
-        if let coupon = coupon, let clickID = clickID, screens.count > 0  {
-            params = Binom.InstallParameters(
-                coupon: coupon,
-                screen: screens.joined(separator: "|"),
-                clickID: clickID
-            )
-        }
-        
-        provider.trackInstall(params) { (requestResult) in
-            switch requestResult {
-            case .success(let response):
-                if !params.isNil {
-                    self.uuid = response.uuid
-                    self.isCouponValid = response.isCouponValid
-                }
-                return result(.success(response))
-            case .failure(let error):
-                if !silently { PMAlert.show(error: error) }
-                return result(.failure(error))
-            }
+        public init(staticToken: String, uuid: String, app: Int, host: URL) {
+            self.staticToken = staticToken
+            self.uuid = uuid
+            self.app = app
+            self.host = host
         }
     }
     
-    public static func updateSubscription(
+    // MARK: Properties
+    
+    private let provider = BinomProvider()
+    
+    internal var configuration: Configuration!
+    
+    private var token: Binom.Token!
+    
+    // MARK: Initialization
+    
+    public static let shared = BinomManager()
+    
+    private init() { }
+    
+    // MARK: API
+    
+    public func setup(with configuration: Configuration) {
+        self.configuration = configuration
+        NotificationCenter.default.addObserver(
+            self, selector: #selector(willEnterForeground),
+            name: UIApplication.willEnterForegroundNotification, object: nil
+        )
+    }
+    
+    public func retrieveOffer(result: @escaping (Swift.Result<[String], Error>) -> Void) {
+        firstly {
+            self.authenticate()
+        }.then {
+            self.trackInstall()
+        }.done { screens in
+            result(.success(screens))
+        }.catch { error in
+            result(.failure(error))
+        }
+    }
+    
+    public func updateSubscription(
         to subscription: String,
         screenID: String,
         silently: Bool = true
@@ -112,20 +72,70 @@ public final class BinomManager {
         guard
             let receiptDataURL = Bundle.main.appStoreReceiptURL,
             let receipt = try? Data(contentsOf: receiptDataURL).base64EncodedString(),
-            let uuid = uuid
+            let token = token
         else { return }
-        
+
         let params = Binom.SubscriptionUpdateParameters(
-            uuid: uuid,
+            uuid: configuration.uuid,
             receipt: receipt,
             subscription: subscription,
             screenID: screenID,
-            app: app
+            app: configuration.app,
+            token: token.token
         )
-        
+
         provider.updateSubscription(params) { (requestResult) in
             guard case .failure(let error) = requestResult, !silently else { return }
             PMAlert.show(error: error)
         }
+    }
+    
+    // MARK: Private
+    
+    @discardableResult
+    private func authenticate() -> Promise<Void> {
+        Promise { seal in
+            provider.authenticate(.init(app: configuration.app, uuid: configuration.uuid, key: configuration.staticToken)).get { token in
+                self.token = token
+                seal.fulfill()
+            }.catch { error in
+                seal.reject(error)
+            }
+        }
+    }
+    
+    private func trackInstall() -> Promise<[String]> {
+        Promise { seal in
+            let params = retrieveClipboardContent() ?? Binom.InstallParameters(screen: nil, clickID: nil, token: token.token)
+            provider.trackInstall(params).get { response in
+                let screens = params.screen?.components(separatedBy: "|") ?? []
+                return seal.fulfill(screens)
+            }.catch { error in
+                seal.reject(error)
+            }
+        }
+    }
+    
+    private func retrieveClipboardContent() -> Binom.InstallParameters? {
+        guard
+            let encodedData = UIPasteboard.general.string,
+            let decodedData = Data(base64Encoded: encodedData),
+            let content = String(data: decodedData, encoding: .utf8)
+        else { return nil }
+
+        let params = content.components(separatedBy: "//")
+        guard params.count == 4 else { return nil }
+
+        let clickID = params[1]
+        let screenKeys = params[2]
+        
+        return Binom.InstallParameters(screen: screenKeys, clickID: clickID, token: token.token)
+    }
+    
+    // MARK: Events
+    
+    @objc private func willEnterForeground() {
+        guard token.needRefresh else { return }
+        authenticate()
     }
 }

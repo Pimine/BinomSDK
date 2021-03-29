@@ -9,6 +9,7 @@
 import Foundation
 
 struct Keys {
+    static let token            = "BinomManager.token"
     static let uuid             = "BinomManager.uuid"
     static let coupon           = "BinomManager.coupon"
     static let isCouponValid    = "BinomManager.isCouponValid"

@@ -8,22 +8,14 @@
 
 import Foundation
 
-public extension Binom {
+extension Binom {
 struct InstallParameters {
     
     // MARK: - Properties
     
-    public let coupon: String
-    public let screen: String
-    public let clickID: String?
-    
-    // MARK: - Initialization
-    
-    public init(coupon: String, screen: String, clickID: String?) {
-        self.coupon = coupon
-        self.screen = screen
-        self.clickID = clickID
-    }
+    let screen: String?
+    let clickID: String?
+    let token: String
 }}
 
 // MARK: - JSON
@@ -32,9 +24,9 @@ extension Binom.InstallParameters {
     
     var json: Parameters {
         var params = Parameters()
-        params["coupon"] = coupon
         params["screen"] = screen
         params["clickid"] = clickID
+        params["token"] = token
         return params
     }
 }

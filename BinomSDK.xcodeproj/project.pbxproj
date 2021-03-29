@@ -3,11 +3,18 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6EA55E58D3FD9F5A5A2E6698 /* Pods_BinomSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0F212C126383BF1114D72D77 /* Pods_BinomSDK.framework */; };
+		EB16259B260CA1C800818F47 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = EB16259A260CA1C800818F47 /* Moya */; };
+		EB1625A0260CA23400818F47 /* Pimine in Frameworks */ = {isa = PBXBuildFile; productRef = EB16259F260CA23400818F47 /* Pimine */; };
+		EB1625A7260CA29000818F47 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = EB1625A6260CA29000818F47 /* PromiseKit */; };
+		EB1625C7260CD1DA00818F47 /* AuthParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB1625C6260CD1DA00818F47 /* AuthParameters.swift */; };
+		EB30BB9C261202CC00E732B2 /* BackendError.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB30BB9B261202CC00E732B2 /* BackendError.swift */; };
+		EB615306258B6EE200538E48 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB615305258B6EE200538E48 /* Tests.swift */; };
+		EB615308258B6EE200538E48 /* BinomSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBABBBAB24E1A93B00E3AF15 /* BinomSDK.framework */; platformFilter = ios; };
+		EB622FA3258A71E5007F9F38 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB622FA2258A71E5007F9F38 /* Token.swift */; };
 		EB8E593124E1CC850015EA39 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8E593024E1CC850015EA39 /* Keys.swift */; };
 		EBABBBB024E1A93B00E3AF15 /* BinomSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = EBABBBAE24E1A93B00E3AF15 /* BinomSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EBABBBBC24E1B0DF00E3AF15 /* BinomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBABBBBB24E1B0DF00E3AF15 /* BinomManager.swift */; };
@@ -15,16 +22,28 @@
 		EBBAF2F524E2C0A900266E4B /* InstallParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBAF2F424E2C0A900266E4B /* InstallParameters.swift */; };
 		EBBAF2F724E2C18500266E4B /* Binom.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBBAF2F624E2C18500266E4B /* Binom.swift */; };
 		EBC2DAFC24E343E200775110 /* BinomSubscription.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBC2DAFB24E343E200775110 /* BinomSubscription.swift */; };
-		EBCE33E224E2C2B8000B6528 /* InstallResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCE33E124E2C2B8000B6528 /* InstallResponse.swift */; };
 		EBCE33FE24E2C6F0000B6528 /* SubscriptionUpdateParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBCE33FD24E2C6F0000B6528 /* SubscriptionUpdateParameters.swift */; };
 		EBD75FF124E333CF00311357 /* Typealiases.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBD75FF024E333CF00311357 /* Typealiases.swift */; };
 		EBF8804124E2D9C900FAFAE5 /* BinomProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBF8804024E2D9C900FAFAE5 /* BinomProvider.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		EB615309258B6EE200538E48 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = EBABBBA224E1A93B00E3AF15 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = EBABBBAA24E1A93B00E3AF15;
+			remoteInfo = BinomSDK;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		0F212C126383BF1114D72D77 /* Pods_BinomSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BinomSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		31D1E5956EA37098A3F3792E /* Pods-BinomSDK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BinomSDK.debug.xcconfig"; path = "Target Support Files/Pods-BinomSDK/Pods-BinomSDK.debug.xcconfig"; sourceTree = "<group>"; };
-		4C543C573033A4B5676EDD22 /* Pods-BinomSDK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BinomSDK.release.xcconfig"; path = "Target Support Files/Pods-BinomSDK/Pods-BinomSDK.release.xcconfig"; sourceTree = "<group>"; };
+		EB1625C6260CD1DA00818F47 /* AuthParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthParameters.swift; sourceTree = "<group>"; };
+		EB30BB9B261202CC00E732B2 /* BackendError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendError.swift; sourceTree = "<group>"; };
+		EB615303258B6EE200538E48 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		EB615305258B6EE200538E48 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
+		EB615307258B6EE200538E48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EB622FA2258A71E5007F9F38 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
 		EB8E593024E1CC850015EA39 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		EBABBBAB24E1A93B00E3AF15 /* BinomSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BinomSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBABBBAE24E1A93B00E3AF15 /* BinomSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinomSDK.h; sourceTree = "<group>"; };
@@ -34,46 +53,56 @@
 		EBBAF2F424E2C0A900266E4B /* InstallParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallParameters.swift; sourceTree = "<group>"; };
 		EBBAF2F624E2C18500266E4B /* Binom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binom.swift; sourceTree = "<group>"; };
 		EBC2DAFB24E343E200775110 /* BinomSubscription.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinomSubscription.swift; sourceTree = "<group>"; };
-		EBCE33E124E2C2B8000B6528 /* InstallResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallResponse.swift; sourceTree = "<group>"; };
 		EBCE33FD24E2C6F0000B6528 /* SubscriptionUpdateParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubscriptionUpdateParameters.swift; sourceTree = "<group>"; };
 		EBD75FF024E333CF00311357 /* Typealiases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Typealiases.swift; sourceTree = "<group>"; };
 		EBF8804024E2D9C900FAFAE5 /* BinomProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BinomProvider.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		EB615300258B6EE200538E48 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EB615308258B6EE200538E48 /* BinomSDK.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBABBBA824E1A93B00E3AF15 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6EA55E58D3FD9F5A5A2E6698 /* Pods_BinomSDK.framework in Frameworks */,
+				EB1625A0260CA23400818F47 /* Pimine in Frameworks */,
+				EB1625A7260CA29000818F47 /* PromiseKit in Frameworks */,
+				EB16259B260CA1C800818F47 /* Moya in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		513CC51E143DFFF95040833A /* Pods */ = {
+		EB1840A92611FAB2004C6904 /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				31D1E5956EA37098A3F3792E /* Pods-BinomSDK.debug.xcconfig */,
-				4C543C573033A4B5676EDD22 /* Pods-BinomSDK.release.xcconfig */,
 			);
-			path = Pods;
+			name = "Recovered References";
 			sourceTree = "<group>";
 		};
-		D6123EF8DEB54F9CA7864422 /* Frameworks */ = {
+		EB615304258B6EE200538E48 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
-				0F212C126383BF1114D72D77 /* Pods_BinomSDK.framework */,
+				EB615305258B6EE200538E48 /* Tests.swift */,
+				EB615307258B6EE200538E48 /* Info.plist */,
 			);
-			name = Frameworks;
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		EB8E592F24E1CC7D0015EA39 /* Internal */ = {
 			isa = PBXGroup;
 			children = (
-				EBD75FF024E333CF00311357 /* Typealiases.swift */,
+				EBF0C42C258BB97300438E41 /* Networking */,
 				EB8E593024E1CC850015EA39 /* Keys.swift */,
+				EB622FA2258A71E5007F9F38 /* Token.swift */,
+				EBD75FF024E333CF00311357 /* Typealiases.swift */,
 			);
 			path = Internal;
 			sourceTree = "<group>";
@@ -82,9 +111,9 @@
 			isa = PBXGroup;
 			children = (
 				EBABBBAD24E1A93B00E3AF15 /* Sources */,
+				EB615304258B6EE200538E48 /* Tests */,
 				EBABBBAC24E1A93B00E3AF15 /* Products */,
-				513CC51E143DFFF95040833A /* Pods */,
-				D6123EF8DEB54F9CA7864422 /* Frameworks */,
+				EB1840A92611FAB2004C6904 /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -92,6 +121,7 @@
 			isa = PBXGroup;
 			children = (
 				EBABBBAB24E1A93B00E3AF15 /* BinomSDK.framework */,
+				EB615303258B6EE200538E48 /* Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -101,7 +131,6 @@
 			children = (
 				EB8E592F24E1CC7D0015EA39 /* Internal */,
 				EBABBBBA24E1B0BE00E3AF15 /* Support files */,
-				EBCE33FF24E2C905000B6528 /* API */,
 				EBF8804024E2D9C900FAFAE5 /* BinomProvider.swift */,
 				EBABBBBB24E1B0DF00E3AF15 /* BinomManager.swift */,
 				EBC2DAFB24E343E200775110 /* BinomSubscription.swift */,
@@ -119,15 +148,16 @@
 			path = "Support files";
 			sourceTree = "<group>";
 		};
-		EBCE33FF24E2C905000B6528 /* API */ = {
+		EBF0C42C258BB97300438E41 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
 				EBABBC0A24E1B1E400E3AF15 /* BinomAPI.swift */,
-				EBCE33FD24E2C6F0000B6528 /* SubscriptionUpdateParameters.swift */,
-				EBCE33E124E2C2B8000B6528 /* InstallResponse.swift */,
+				EB30BB9B261202CC00E732B2 /* BackendError.swift */,
+				EB1625C6260CD1DA00818F47 /* AuthParameters.swift */,
 				EBBAF2F424E2C0A900266E4B /* InstallParameters.swift */,
+				EBCE33FD24E2C6F0000B6528 /* SubscriptionUpdateParameters.swift */,
 			);
-			path = API;
+			name = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,11 +174,28 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		EB615302258B6EE200538E48 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EB61530B258B6EE200538E48 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				EB6152FF258B6EE200538E48 /* Sources */,
+				EB615300258B6EE200538E48 /* Frameworks */,
+				EB615301258B6EE200538E48 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				EB61530A258B6EE200538E48 /* PBXTargetDependency */,
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = EB615303258B6EE200538E48 /* Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		EBABBBAA24E1A93B00E3AF15 /* BinomSDK */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = EBABBBB324E1A93B00E3AF15 /* Build configuration list for PBXNativeTarget "BinomSDK" */;
 			buildPhases = (
-				710DCC4DCDFE1A1816CBCB67 /* [CP] Check Pods Manifest.lock */,
 				EBABBBA624E1A93B00E3AF15 /* Headers */,
 				EBABBBA724E1A93B00E3AF15 /* Sources */,
 				EBABBBA824E1A93B00E3AF15 /* Frameworks */,
@@ -159,6 +206,11 @@
 			dependencies = (
 			);
 			name = BinomSDK;
+			packageProductDependencies = (
+				EB16259A260CA1C800818F47 /* Moya */,
+				EB16259F260CA23400818F47 /* Pimine */,
+				EB1625A6260CA29000818F47 /* PromiseKit */,
+			);
 			productName = BinomSDK;
 			productReference = EBABBBAB24E1A93B00E3AF15 /* BinomSDK.framework */;
 			productType = "com.apple.product-type.framework";
@@ -169,9 +221,13 @@
 		EBABBBA224E1A93B00E3AF15 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1220;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = Pimine;
 				TargetAttributes = {
+					EB615302258B6EE200538E48 = {
+						CreatedOnToolsVersion = 12.2;
+					};
 					EBABBBAA24E1A93B00E3AF15 = {
 						CreatedOnToolsVersion = 11.6;
 						LastSwiftMigration = 1160;
@@ -187,16 +243,29 @@
 				Base,
 			);
 			mainGroup = EBABBBA124E1A93B00E3AF15;
+			packageReferences = (
+				EB162599260CA1C800818F47 /* XCRemoteSwiftPackageReference "Moya" */,
+				EB16259E260CA23400818F47 /* XCRemoteSwiftPackageReference "PimineSDK" */,
+				EB1625A5260CA29000818F47 /* XCRemoteSwiftPackageReference "PromiseKit" */,
+			);
 			productRefGroup = EBABBBAC24E1A93B00E3AF15 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				EBABBBAA24E1A93B00E3AF15 /* BinomSDK */,
+				EB615302258B6EE200538E48 /* Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		EB615301258B6EE200538E48 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EBABBBA924E1A93B00E3AF15 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,52 +275,88 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		710DCC4DCDFE1A1816CBCB67 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
+/* Begin PBXSourcesBuildPhase section */
+		EB6152FF258B6EE200538E48 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-BinomSDK-checkManifestLockResult.txt",
+				EB615306258B6EE200538E48 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
 		};
-/* End PBXShellScriptBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
 		EBABBBA724E1A93B00E3AF15 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				EBCE33FE24E2C6F0000B6528 /* SubscriptionUpdateParameters.swift in Sources */,
 				EBABBC0B24E1B1E400E3AF15 /* BinomAPI.swift in Sources */,
+				EB622FA3258A71E5007F9F38 /* Token.swift in Sources */,
 				EBD75FF124E333CF00311357 /* Typealiases.swift in Sources */,
+				EB1625C7260CD1DA00818F47 /* AuthParameters.swift in Sources */,
 				EB8E593124E1CC850015EA39 /* Keys.swift in Sources */,
 				EBC2DAFC24E343E200775110 /* BinomSubscription.swift in Sources */,
-				EBCE33E224E2C2B8000B6528 /* InstallResponse.swift in Sources */,
 				EBF8804124E2D9C900FAFAE5 /* BinomProvider.swift in Sources */,
 				EBABBBBC24E1B0DF00E3AF15 /* BinomManager.swift in Sources */,
 				EBBAF2F524E2C0A900266E4B /* InstallParameters.swift in Sources */,
+				EB30BB9C261202CC00E732B2 /* BackendError.swift in Sources */,
 				EBBAF2F724E2C18500266E4B /* Binom.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		EB61530A258B6EE200538E48 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			platformFilter = ios;
+			target = EBABBBAA24E1A93B00E3AF15 /* BinomSDK */;
+			targetProxy = EB615309258B6EE200538E48 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		EB61530C258B6EE200538E48 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F79SZ7VU87;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pimine.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		EB61530D258B6EE200538E48 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = F79SZ7VU87;
+				INFOPLIST_FILE = Tests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.2;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.pimine.Tests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		EBABBBB124E1A93B00E3AF15 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -374,7 +479,6 @@
 		};
 		EBABBBB424E1A93B00E3AF15 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 31D1E5956EA37098A3F3792E /* Pods-BinomSDK.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -391,7 +495,7 @@
 				);
 				INFOPLIST_FILE = "Sources/Support files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -410,7 +514,6 @@
 		};
 		EBABBBB524E1A93B00E3AF15 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4C543C573033A4B5676EDD22 /* Pods-BinomSDK.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -427,7 +530,7 @@
 				);
 				INFOPLIST_FILE = "Sources/Support files/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -446,6 +549,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		EB61530B258B6EE200538E48 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EB61530C258B6EE200538E48 /* Debug */,
+				EB61530D258B6EE200538E48 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		EBABBBA524E1A93B00E3AF15 /* Build configuration list for PBXProject "BinomSDK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -465,6 +577,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		EB162599260CA1C800818F47 /* XCRemoteSwiftPackageReference "Moya" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Moya/Moya";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 14.0.1;
+			};
+		};
+		EB16259E260CA23400818F47 /* XCRemoteSwiftPackageReference "PimineSDK" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Pimine/PimineSDK";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		EB1625A5260CA29000818F47 /* XCRemoteSwiftPackageReference "PromiseKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mxcl/PromiseKit";
+			requirement = {
+				branch = v7;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		EB16259A260CA1C800818F47 /* Moya */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB162599260CA1C800818F47 /* XCRemoteSwiftPackageReference "Moya" */;
+			productName = Moya;
+		};
+		EB16259F260CA23400818F47 /* Pimine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB16259E260CA23400818F47 /* XCRemoteSwiftPackageReference "PimineSDK" */;
+			productName = Pimine;
+		};
+		EB1625A6260CA29000818F47 /* PromiseKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = EB1625A5260CA29000818F47 /* XCRemoteSwiftPackageReference "PromiseKit" */;
+			productName = PromiseKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = EBABBBA224E1A93B00E3AF15 /* Project object */;
 }
