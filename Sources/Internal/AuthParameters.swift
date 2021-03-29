@@ -9,7 +9,7 @@
 import Foundation
 
 extension Binom {
-    struct AuthParameters: Codable {
+struct AuthParameters: Codable {
     
     // MARK: Parameters
     

@@ -9,6 +9,7 @@
 import Moya
 import PromiseKit
 import PimineUtilities
+import Foundation
 
 final class BinomProvider {
     

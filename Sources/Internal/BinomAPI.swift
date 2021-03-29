@@ -7,6 +7,7 @@
 //  Created by Den Andreychuk <denis.andrei4uk@yandex.ua> on 10.08.2020
 
 import Moya
+import Foundation
 
 enum BinomAPI {
     /// Tries to auth client with provided key.
