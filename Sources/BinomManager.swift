@@ -135,7 +135,7 @@ public final class BinomManager {
         let clickID = params[1]
         let screenKeys = params[2]
         
-        UIPasteboard.general.string = nil
+        UIPasteboard.general.string = ""
         
         return Binom.InstallParameters(screen: screenKeys, clickID: clickID, token: token.token)
     }
