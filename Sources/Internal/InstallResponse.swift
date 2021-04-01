@@ -13,7 +13,7 @@ struct InstallResponse: Decodable {
     
     // MARK: Properties
     
-    let uuid: String
+    let uuid: Int
     let coupon: Bool
     let status: String
 }}

@@ -48,7 +48,7 @@ final class BinomProvider {
                         let error = PMGeneralError(message: backendError?.error ?? PMessages.somethingWentWrong)
                         return seal.reject(error)
                     }
-                    return seal.fulfill(installResponse.uuid)
+                    return seal.fulfill(installResponse.uuid.string)
                 case .failure(let error):
                     return seal.reject(error)
                 }
