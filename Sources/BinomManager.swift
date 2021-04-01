@@ -31,9 +31,10 @@ public final class BinomManager {
     // MARK: Properties
     
     private let provider = BinomProvider()
-    
     internal var configuration: Configuration!
     
+    @UserDefaultsBacked(key: Keys.uuid)
+    private var uuid: String?
     private var token: Binom.Token!
     
     // MARK: Initialization
@@ -52,12 +53,16 @@ public final class BinomManager {
         )
     }
     
+    public func authenticate(result: @escaping (Swift.Result<Void, Error>) -> Void) {
+        _authenticate().pipe(to: result)
+    }
+    
+    
     public func retrieveOffer(result: @escaping (Swift.Result<[String], Error>) -> Void) {
-        firstly {
-            self.authenticate()
-        }.then {
-            self.trackInstall()
-        }.done { screens in
+        let params = retrieveClipboardContent() ?? Binom.InstallParameters(screen: nil, clickID: nil, token: token.token)
+        provider.trackInstall(params).get { uuid in
+            self.uuid = uuid
+            let screens = params.screen?.components(separatedBy: "|") ?? []
             result(.success(screens))
         }.catch { error in
             result(.failure(error))
@@ -72,11 +77,12 @@ public final class BinomManager {
         guard
             let receiptDataURL = Bundle.main.appStoreReceiptURL,
             let receipt = try? Data(contentsOf: receiptDataURL).base64EncodedString(),
-            let token = token
+            let token = token,
+            let uuid = uuid
         else { return }
 
         let params = Binom.SubscriptionUpdateParameters(
-            uuid: configuration.uuid,
+            uuid: uuid,
             receipt: receipt,
             subscription: subscription,
             screenID: screenID,
@@ -93,7 +99,7 @@ public final class BinomManager {
     // MARK: Private
     
     @discardableResult
-    private func authenticate() -> Promise<Void> {
+    private func _authenticate() -> Promise<Void> {
         Promise { seal in
             provider.authenticate(.init(app: configuration.app, uuid: configuration.uuid, key: configuration.staticToken)).get { token in
                 self.token = token
@@ -129,6 +135,8 @@ public final class BinomManager {
         let clickID = params[1]
         let screenKeys = params[2]
         
+        UIPasteboard.general.string = nil
+        
         return Binom.InstallParameters(screen: screenKeys, clickID: clickID, token: token.token)
     }
     
@@ -136,6 +144,6 @@ public final class BinomManager {
     
     @objc private func willEnterForeground() {
         guard token.needRefresh else { return }
-        authenticate()
+        _authenticate()
     }
 }

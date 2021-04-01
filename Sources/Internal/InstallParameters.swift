@@ -11,7 +11,7 @@ import Foundation
 extension Binom {
 struct InstallParameters {
     
-    // MARK: - Properties
+    // MARK: Properties
     
     let screen: String?
     let clickID: String?

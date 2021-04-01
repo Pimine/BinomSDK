@@ -38,14 +38,17 @@ final class BinomProvider {
         }
     }
     
-    func trackInstall(_ params: Binom.InstallParameters?) -> Promise<Void> {
+    func trackInstall(_ params: Binom.InstallParameters?) -> Promise<String> {
         Promise { seal in
             provider.request(.trackInstall(params)) { (requestResult) in
                 switch requestResult {
                 case .success(let response):
-                    let backendError = try? response.map(Binom.BackendError.self, atKeyPath: "data", using: self.decoder)
-                    let error = PMGeneralError(message: backendError?.error ?? PMessages.somethingWentWrong)
-                    backendError.isNil ? seal.fulfill() : seal.reject(error)
+                    guard let installResponse = try? response.map(Binom.InstallResponse.self, atKeyPath: "data", using: self.decoder) else {
+                        let backendError = try? response.map(Binom.BackendError.self, atKeyPath: "data", using: self.decoder)
+                        let error = PMGeneralError(message: backendError?.error ?? PMessages.somethingWentWrong)
+                        return seal.reject(error)
+                    }
+                    return seal.fulfill(installResponse.uuid)
                 case .failure(let error):
                     return seal.reject(error)
                 }

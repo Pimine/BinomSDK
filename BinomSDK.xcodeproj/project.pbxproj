@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EB017EBC2615F8350092AA82 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB017EBB2615F8350092AA82 /* Keys.swift */; };
+		EB017EC22615F8EB0092AA82 /* InstallResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB017EC12615F8EB0092AA82 /* InstallResponse.swift */; };
 		EB16259B260CA1C800818F47 /* Moya in Frameworks */ = {isa = PBXBuildFile; productRef = EB16259A260CA1C800818F47 /* Moya */; };
 		EB1625A0260CA23400818F47 /* Pimine in Frameworks */ = {isa = PBXBuildFile; productRef = EB16259F260CA23400818F47 /* Pimine */; };
 		EB1625A7260CA29000818F47 /* PromiseKit in Frameworks */ = {isa = PBXBuildFile; productRef = EB1625A6260CA29000818F47 /* PromiseKit */; };
@@ -15,7 +17,6 @@
 		EB615306258B6EE200538E48 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB615305258B6EE200538E48 /* Tests.swift */; };
 		EB615308258B6EE200538E48 /* BinomSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBABBBAB24E1A93B00E3AF15 /* BinomSDK.framework */; platformFilter = ios; };
 		EB622FA3258A71E5007F9F38 /* Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB622FA2258A71E5007F9F38 /* Token.swift */; };
-		EB8E593124E1CC850015EA39 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = EB8E593024E1CC850015EA39 /* Keys.swift */; };
 		EBABBBB024E1A93B00E3AF15 /* BinomSDK.h in Headers */ = {isa = PBXBuildFile; fileRef = EBABBBAE24E1A93B00E3AF15 /* BinomSDK.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		EBABBBBC24E1B0DF00E3AF15 /* BinomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBABBBBB24E1B0DF00E3AF15 /* BinomManager.swift */; };
 		EBABBC0B24E1B1E400E3AF15 /* BinomAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = EBABBC0A24E1B1E400E3AF15 /* BinomAPI.swift */; };
@@ -38,13 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EB017EBB2615F8350092AA82 /* Keys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		EB017EC12615F8EB0092AA82 /* InstallResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstallResponse.swift; sourceTree = "<group>"; };
 		EB1625C6260CD1DA00818F47 /* AuthParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthParameters.swift; sourceTree = "<group>"; };
 		EB30BB9B261202CC00E732B2 /* BackendError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackendError.swift; sourceTree = "<group>"; };
 		EB615303258B6EE200538E48 /* Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		EB615305258B6EE200538E48 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		EB615307258B6EE200538E48 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EB622FA2258A71E5007F9F38 /* Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Token.swift; sourceTree = "<group>"; };
-		EB8E593024E1CC850015EA39 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
 		EBABBBAB24E1A93B00E3AF15 /* BinomSDK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = BinomSDK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EBABBBAE24E1A93B00E3AF15 /* BinomSDK.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BinomSDK.h; sourceTree = "<group>"; };
 		EBABBBAF24E1A93B00E3AF15 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -100,8 +102,8 @@
 			isa = PBXGroup;
 			children = (
 				EBF0C42C258BB97300438E41 /* Networking */,
-				EB8E593024E1CC850015EA39 /* Keys.swift */,
 				EB622FA2258A71E5007F9F38 /* Token.swift */,
+				EB017EBB2615F8350092AA82 /* Keys.swift */,
 				EBD75FF024E333CF00311357 /* Typealiases.swift */,
 			);
 			path = Internal;
@@ -155,6 +157,7 @@
 				EB30BB9B261202CC00E732B2 /* BackendError.swift */,
 				EB1625C6260CD1DA00818F47 /* AuthParameters.swift */,
 				EBBAF2F424E2C0A900266E4B /* InstallParameters.swift */,
+				EB017EC12615F8EB0092AA82 /* InstallResponse.swift */,
 				EBCE33FD24E2C6F0000B6528 /* SubscriptionUpdateParameters.swift */,
 			);
 			name = Networking;
@@ -289,12 +292,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				EBCE33FE24E2C6F0000B6528 /* SubscriptionUpdateParameters.swift in Sources */,
+				EB017EBC2615F8350092AA82 /* Keys.swift in Sources */,
 				EBABBC0B24E1B1E400E3AF15 /* BinomAPI.swift in Sources */,
 				EB622FA3258A71E5007F9F38 /* Token.swift in Sources */,
 				EBD75FF124E333CF00311357 /* Typealiases.swift in Sources */,
 				EB1625C7260CD1DA00818F47 /* AuthParameters.swift in Sources */,
-				EB8E593124E1CC850015EA39 /* Keys.swift in Sources */,
 				EBC2DAFC24E343E200775110 /* BinomSubscription.swift in Sources */,
+				EB017EC22615F8EB0092AA82 /* InstallResponse.swift in Sources */,
 				EBF8804124E2D9C900FAFAE5 /* BinomProvider.swift in Sources */,
 				EBABBBBC24E1B0DF00E3AF15 /* BinomManager.swift in Sources */,
 				EBBAF2F524E2C0A900266E4B /* InstallParameters.swift in Sources */,
